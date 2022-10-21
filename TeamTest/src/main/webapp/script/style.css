@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-* {position: relative;
+* {
 	margin: 0px auto;
 	padding: 0px;
 	text-align: center;
@@ -9,56 +9,105 @@ div {
 	border: 1px black solid;
 }
 .topDiv{
-	border: 1px red solid;
+	
 	width: 100%;
 	height: 80px;
+	z-index: 2;
 }
 
 .topLeftDiv {
+	border: 1px rgb(255, 255, 255) solid;
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 70%;
 	height: 80px;
+	z-index: 3;
 }
 
 .topRightDiv {
-	display: inline;
 	position: fixed;
 	top: 0;
 	right: 0;
 	width: 30%;
 	height: 80px;
 	font-size: small;
+	z-index: 3;
 }
 
-body {
-	position: relative;
-}
-
-.sideFilter{
-	position: fixed;
-	top: 82px;
-	left: 0;
-	height: 50%;
-}
-
-.sidebar {
+.userLeftTopDiv, .userRightTopDiv {
 	height: 100%;
+	line-height: 80px;
 }
 
 .middleDiv {
-	width: 98%;
-	height: 100%;
+	width: 100%;
+	height: 1000px;
 	overflow: auto;
+	border: violet 3px solid;
+}
+
+.sideFilter{
+	float: left;
+	height: 997px;
+	width: 10%;
+}
+
+.sidebar{
+	position: fixed;
+	left: 0;
+	width: 10%;
 }
 
 
-.footer {
-	position: fixed;
-	bottom: 0;
-	left: 0;
+.mainSection {
+	float: right;
+	width: 89%;
+	height: 997px;
+	border: white 1px solid;
+	margin-right: 3px ;
+}
+
+
+.bottomDiv {
+	clear: both;
 	width: 100%;
 	height: 50px;
+	background-color: wheat;
+}
+
+.notice {
+	float: left;
+	height: 997px;
+	width: 49.7%;
+}
+
+.askList {
+	float: right;
+	height: 997px;
+	width: 49.9%;
+}
+
+.loginPage {
+	height: 100%;
+	width: 100%;
+}
+
+.loginTopDiv {
+	height: 20%;
+}
+
+.loginDiv {
+	height: 100%;
+	
+}
+
+Table {
+	border: 1px solid black;
+	border-collapse: separate;
+}
+
+th, td {
+	border: 1px solid black;
 }
 

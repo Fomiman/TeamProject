@@ -4,8 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>좌측 필터&정렬</title>
-<link rel="stylesheet" type="text/css" href="./script/style.css">
+<title>좌측 필터&amp;정렬</title>
 </head>
 <body>
 	<div class="sidebar">
@@ -22,10 +21,9 @@
 	<h3>정렬</h3>
 
 	<select>
-		<optgroup label="정렬">
+			<option>정렬</option>
 			<option value="priceSort">가격순</option>
 			<option value="sizeSort">사이즈순</option>
-		</optgroup>
 	</select>
 	</div>
 </body>
