@@ -1,4 +1,4 @@
-GitRepositoriesView.GitDirectories=D\:\\TeamProject\\workspace\\eShop-Website\\.git;
-GitRepositoriesView.GitDirectories.relative=eShop-Website\\.git;
+GitRepositoriesView.GitDirectories=D\:\\TeamProject\\workspace\\eShop-Website\\.git;D\:\\TeamProject\\workspace\\.git;
+GitRepositoriesView.GitDirectories.relative=eShop-Website\\.git;.git;
 core_autoIgnoreDerivedResources=false
 eclipse.preferences.version=1
