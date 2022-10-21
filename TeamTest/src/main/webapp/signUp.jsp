@@ -12,34 +12,18 @@
 	<div class="topDiv">
 
 		<div class="topLeftDiv">
-			<!-- 상단바 부분 사용자,관리자 로그인 시 다른 페이지로 이동 -->
-
-			<%@include file="userLeftTopDiv.jsp"%>
-
-			<!-- 나중에 로그인 구현후에 사용자 관리자 구분할거 -->
-			<%-- <c:choose>
-				<c:when test=""><%@include file="userTopDiv.jsp" %></c:when>
-				<c:when test=""><%@include file="adminTopDiv.jsp" %></c:when>
-			</c:choose> --%>
+			<%@include file="/userPage/userLeftTopDiv.jsp"%>
 		</div>
 
 		<div class="topRightDiv">
-			<!-- 상단바 부분 사용자,관리자 로그인 시 다른 페이지로 이동 -->
-
-			<%@include file="userRightTopDiv.jsp"%>
-
-			<!-- 나중에 로그인 구현후에 사용자 관리자 구분할거 -->
-			<%-- <c:choose>
-				<c:when test=""><%@include file="userTopDiv.jsp" %></c:when>
-				<c:when test=""><%@include file="adminTopDiv.jsp" %></c:when>
-			</c:choose> --%>
+			<%@include file="/userPage/userRightTopDiv.jsp"%>
 		</div>
 
 	</div>
 
 	<div class="signUpDiv">
 
-		<section class="mainSection">
+		<section class="signUpSection">
 
 			<input type="hidden" name="member_code" value="">
 			<table>
@@ -91,7 +75,10 @@
 				</tr>
 			</table>
 		</section>
-
+	</div>
+	
+	<div class="bottomDiv">
+		<%@ include file="footer.jsp" %>
 	</div>
 </body>
 </html>

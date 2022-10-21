@@ -24,7 +24,7 @@
 		</div>
 
 	</div>
-
+	
 	<div class="middleDiv">
 		<!-- 나중에 여기에 로그인 회원가입시에 화면 전환되게 -->
 
@@ -40,7 +40,7 @@
 
 	</div>
 
-	<div class="footer">
+	<div class="bottomDiv">   
 		<!-- 푸터파트 -->
 		<%@include file="footer.jsp"%>
 	</div>
