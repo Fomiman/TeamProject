@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
 <title>좌측 필터&amp;정렬</title>
 </head>
 <body>

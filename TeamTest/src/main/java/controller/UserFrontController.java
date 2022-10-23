@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import action.Action;
+import vo.ActionForward;
+
 /**
  * Servlet implementation class UserFrontController
  */
@@ -14,28 +17,62 @@ import javax.servlet.http.HttpServletResponse;
 public class UserFrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public UserFrontController() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		doProcess(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		doProcess(request, response);
 	}
+	
+	protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		 request.setCharacterEncoding("UTF-8");//반드시 첫줄
+			
+		//요청객체로부터 '프로젝트명+파일경로'까지 가져옴(예)/project/userLogin.usr
+		String requestURI=request.getRequestURI();
+		//요청 URL : http://localhost:8090/project/userLogin.usr
+		//요청 URI : /project/userLogin.usr
+		
+		//요청객체로부터 '프로젝트 path'만 가져옴(예)/project
+		String contextPath=request.getContextPath();
+		
+		/* URI에서 contextPath길이만큼 잘라낸 나머지 문자열
+		 * /project/userLogin.usr - /project = "/userLogin.usr"
+		 */
+		String command=requestURI.substring(contextPath.length());//(index 8~끝까지) 부분문자열 반환
+		
+		/* 요청이 파악되면 해당 요청을 처리하는 각 Action클래스를 사용해서 요청 처리
+		 * 각 요청에 해당하는 Action클래스 객체들을 다형성을 이용해서 동일한 타입(Action)으로 참조하기 위해
+		 * 'Action 인터페이스' 타입의 변수 선언(혜574p) 
+		 */
+		Action action = null;
+		ActionForward forward = null;
+		
+		System.out.println("[User]command : " + command);//어떤 요청인지 확인하기 위해 출력		
+		
+		if(command.equals("/userHome.usr")) {//'index.jsp에서 userHome.jsp뷰페이지 보기' 요청이면			
+			forward = new  ActionForward("userHome.jsp", false); //반드시 디스패치 방식으로 포워딩 
+		}
+		
+		else if(command.equals("/userLogin.usr")) {//'로그인 폼 보기' 요청이면
+			forward = new ActionForward("loginForm.jsp", false);	//반드시 디스패치 방식으로 포워딩					
+		}
+		
+		/***************************************************************
+		 * 3.포워딩
+		 ***************************************************************/
+		if(forward != null) {
+			if(forward.isRedirect()) {
+				response.sendRedirect(forward.getPath());//"userMain.jsp"
+			}else {
+				request.getRequestDispatcher(forward.getPath()).forward(request, response);
+			}
+		}
+		
+	}//doProcess
 
 }
