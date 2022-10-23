@@ -9,10 +9,10 @@
 </head>
 <body>
 	<div class="adminLeftTopDiv"> <!-- 유저용 상단바 부분 -->
-		<a href="orderManagement.jsp"><img alt="실시간 주문 관리" src="" />실시간 주문 관리</a>
-		<a href=""><img alt="상품/매출 관리" src="" />상품/매출 관리</a>
-		<a href=""><img alt="게시판 관리" src="" />게시판 관리</a>
-		<a href=""><img alt="회원 관리" src="" />회원 관리</a>
+		<a href="orderManagement.jsp">실시간 주문 관리</a>
+		<a href="">상품/매출 관리</a>
+		<a href="">게시판 관리</a>
+		<a href="">회원 관리</a>
 	</div>
 </body>
 </html>
