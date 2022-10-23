@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import action.Action;
+import action.UserLoginAction;
 import vo.ActionForward;
 
 /**
@@ -60,6 +61,15 @@ public class UserFrontController extends HttpServlet {
 		
 		else if(command.equals("/userLogin.usr")) {//'로그인 폼 보기' 요청이면
 			forward = new ActionForward("loginForm.jsp", false);	//반드시 디스패치 방식으로 포워딩					
+		}
+		
+		else if(command.equals("/userLoginAction.usr")) {//'로그인 처리' 요청이면
+			action  = new UserLoginAction();			
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {				
+				e.printStackTrace();
+			}
 		}
 		
 		/***************************************************************

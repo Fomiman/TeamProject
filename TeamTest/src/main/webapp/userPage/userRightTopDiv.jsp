@@ -8,18 +8,18 @@
 <head>
 <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
 <title>사용자 우상단</title>
-<link rel="stylesheet" type="text/css" href="../script/style.css">
+<link rel="stylesheet" type="text/css" href="./script/style.css">
 </head>
 <body>	
 		<div class="userRightTopDiv">
 			<c:choose>
 		    	
-		    	<c:when test="${sessionScope.u_id eq null}">
+		    	<c:when test="${sessionScope.member_id eq null}">
 			    	<a href="${pageContext.request.contextPath}/userLogin.usr">로그인</a>
 			    </c:when>
 			    
 		    	<c:otherwise>
-			    	${sessionScope.u_name}님 환영합니다.<br>
+			    	${sessionScope.member_id}님 환영합니다.<br>
 			    	<a href="${pageContext.request.contextPath}/userLogout.usr">로그아웃</a>
 		    	</c:otherwise>
 		    	

@@ -9,7 +9,7 @@ String cookieId = "";//★★null로 초기화 하면 안됨
 Cookie[] cookies = request.getCookies();
 if(cookies != null && cookies.length > 0){
 	for(int i=0 ; i<cookies.length ; i++){
-		if(cookies[i].getName().equals("u_id")){
+		if(cookies[i].getName().equals("member_id")){
 			cookieId = cookies[i].getValue();//쿠키값을 얻어와
 			break;
 		}

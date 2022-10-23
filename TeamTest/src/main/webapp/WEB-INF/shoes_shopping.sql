@@ -184,3 +184,20 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 /**************************************************************************************************/
 select * from managerTbl;
 insert into managerTBL values ('admin123', 'admin123' ,'metalwing53@gmail.com');
+
+CREATE TABLE IF NOT EXISTS `shoes_shoppingMall`.`memberTBL` (
+  `member_code` INT NOT NULL,
+  `member_id` NVARCHAR(12) NOT NULL,
+  `member_pwd` NVARCHAR(12) NULL,
+  `member_name` NVARCHAR(4) NULL,
+  `member_birth` DATE NULL,
+  `member_phone` VARCHAR(45) NULL,
+  `member_email` VARCHAR(45) NULL,
+  `member_gender` VARCHAR(45) NULL,
+  PRIMARY KEY (`member_code`, `member_id`))
+ENGINE = InnoDB;
+
+insert into memberTBL values ('000001', 'user123' ,'user123' , 'user','1993-05-03','010-1111-2222','metalwing53@gmail.com','M');
+select * from memberTBL;
+
+select member_id from memberTBL where member_id='user123' and member_pwd='user123';

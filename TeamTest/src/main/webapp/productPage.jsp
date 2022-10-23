@@ -7,7 +7,7 @@
 <title>상품란</title>
 <link rel="stylesheet" type="text/css" href="./script/style.css">
 </head>
-<body>
-
+<body>	
+	<h1>상품 페이지(준비중)</h1>
 </body>
 </html>
